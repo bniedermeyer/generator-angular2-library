@@ -208,5 +208,7 @@ gulp.task('default', ['build:watch']);
  * Deletes the specified folder
  */
 function deleteFolders(folders) {
-  return del(folders);
+  var dirToDelete = folders + '/**',
+    dirToIgnore = '!' + folders;
+  return del(dirToDelete, dirToIgnore);
 }
